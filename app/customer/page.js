@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { PlusCircle, Edit2, Trash2 } from 'lucide-react'
+import { PlusCircle, Edit2, Trash2, Eye } from 'lucide-react'
+import Link from 'next/link'
 
 export default function CustomerManagement() {
   const [customers, setCustomers] = useState([])
@@ -208,6 +209,11 @@ export default function CustomerManagement() {
                     </p>
                   </div>
                   <div className='flex space-x-2'>
+                    <Link href={`/customer/${customer._id}`}>
+                      <button className='inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500'>
+                        <Eye className='h-5 w-5' />
+                      </button>
+                    </Link>
                     <button
                       onClick={() => handleEdit(customer)}
                       className='inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'

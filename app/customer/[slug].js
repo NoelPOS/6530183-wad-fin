@@ -10,6 +10,7 @@ export default function CustomerDetails() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const params = useParams()
+  console.log(params.slug)
   const router = useRouter()
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL + '/customer'
@@ -17,7 +18,7 @@ export default function CustomerDetails() {
   useEffect(() => {
     const fetchCustomer = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/${params.id}`)
+        const response = await axios.get(`${apiUrl}/${params.slug}`)
         setCustomer(response.data)
         setLoading(false)
       } catch (error) {
