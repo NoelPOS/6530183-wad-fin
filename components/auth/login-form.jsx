@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-// import { useAuthStore } from '../../zustand/admin-store'
+import { useAuthStore } from '../../zustand/admin-store'
 
 export function LoginForm() {
   const login = useAuthStore((state) => state.login)
@@ -26,7 +26,7 @@ export function LoginForm() {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // login(data.message.user)
+          login(data.message.user)
           router.push('/admin/pendingusers')
         }
       })

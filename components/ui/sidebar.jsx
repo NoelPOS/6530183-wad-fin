@@ -2,15 +2,15 @@
 import Link from 'next/link'
 import { UserCheck, UserX, Settings, User, UserCog, LogOut } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-// import { useAuthStore } from '../../zustand/admin-store'
+import { useAuthStore } from '../../zustand/admin-store'
 
 export function Sidebar() {
-  const router = useRouter()
-  // const logout = useAuthStore((state) => state.logout)
+  // const router = useRouter()
+  const logout = useAuthStore((state) => state.logout)
 
   const handleLogout = () => {
-    // logout()
-    router.push('/')
+    logout()
+    // router.push('/')
   }
 
   return (
