@@ -14,7 +14,7 @@ export default function AdminUsers() {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/admin')
+      router.push('/')
     }
   }, [isAuthenticated, router])
 

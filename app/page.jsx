@@ -1,7 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
 import { LoginForm } from '@/components/auth/login-form'
 import { AdminPanel } from '@/components/admin-panel'
 import { useAuthStore } from '@/zustand/admin-store'

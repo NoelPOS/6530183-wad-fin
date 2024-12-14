@@ -13,7 +13,7 @@ export default function AdminEvents() {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/admin')
+      router.push('/')
     }
   }, [isAuthenticated, router])
 
