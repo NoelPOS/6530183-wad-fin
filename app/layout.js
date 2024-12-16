@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Hive Dashboard',
   description: 'Admin Dashboard for Hive',
+  image: '/images/logo.png',
 }
 
 export default function RootLayout({ children }) {
