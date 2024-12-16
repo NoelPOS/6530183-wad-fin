@@ -3,14 +3,10 @@
 import { LoginForm } from '@/components/auth/login-form'
 import { AdminPanel } from '@/components/admin-panel'
 import { useAuthStore } from '@/zustand/admin-store'
+import { useEffect } from 'react'
 
 export default function AdminPage() {
   // const isAuthenticated = true
-
-  const {user, isAuthenticated, login, logout} = useAuthStore()
-  console.log('user', user)
-  console.log('isAuthenticated', isAuthenticated)
-  console.log('login', login)
-  console.log('logout', logout)
+  const isAuthenticated = localStorage.getItem('isAuthenticated')
   return isAuthenticated ? <AdminPanel /> : <LoginForm />
 } 

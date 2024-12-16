@@ -27,7 +27,7 @@ export function LoginForm() {
       .then((data) => {
         if (data.success) {
           login(data.message.user)
-          console.log('user', user)
+           localStorage.setItem('isAuthenticated', true)
           router.push('/admin/pendingusers')
         }
       })
