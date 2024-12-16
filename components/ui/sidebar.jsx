@@ -5,12 +5,13 @@ import { useRouter } from 'next/navigation'
 import { useAuthStore } from '../../zustand/admin-store'
 
 export function Sidebar() {
-  // const router = useRouter()
+  const router = useRouter()
   const logout = useAuthStore((state) => state.logout)
 
   const handleLogout = () => {
+    window.confirm('Are you sure you want to logout?')
     logout()
-    // router.push('/')
+    router.push('/')
   }
 
   return (
@@ -43,9 +44,11 @@ export function Sidebar() {
         <Link href='#' className='p-2 rounded-lg hover:bg-gray-100'>
           <Settings className='w-5 h-5 text-gray-500' />
         </Link>
-        <Link href='#' className='p-2 rounded-lg hover:bg-gray-100'>
-          <LogOut className='w-5 h-5 text-gray-500' onClick={handleLogout} />
-        </Link>
+        <div className='p-2 rounded-lg hover:bg-gray-100'>
+          
+            <button onClick={() => handleLogout()}><LogOut className='w-5 h-5 text-gray-500' /></button>
+         
+        </div>
       </div>
     </div>
   )

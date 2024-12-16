@@ -10,8 +10,7 @@ import { useRouter } from 'next/navigation'
 
 export default function AdminUsers() {
   const router = useRouter()
-  // const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
-  const isAuthenticated = true
+  const { isAuthenticated } = useAuthStore()
 
   useEffect(() => {
     if (!isAuthenticated) {

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useAuthStore } from '../../zustand/admin-store'
 
 export function LoginForm() {
-  const login = useAuthStore((state) => state.login)
+  const {login, user} = useAuthStore()
   const [showPassword, setShowPassword] = useState(false)
   const router = useRouter()
 
@@ -27,6 +27,7 @@ export function LoginForm() {
       .then((data) => {
         if (data.success) {
           login(data.message.user)
+          console.log('user', user)
           router.push('/admin/pendingusers')
         }
       })
