@@ -21,7 +21,7 @@ export function UserTable() {
         if (data.success) {
           setUsers(() => {
             return data.message.filter(
-              (user) => user.verficatiionStatus == 'notVerified'
+              (user) => user.verificationStatus == 'notVerified'
             )
           })
         }
