@@ -4,8 +4,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Stock App',
-  description: 'Stock App',
+  title: 'Hive Dashboard',
+  description: 'Admin Dashboard for Hive',
 }
 
 export default function RootLayout({ children }) {
