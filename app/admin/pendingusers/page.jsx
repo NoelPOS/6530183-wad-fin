@@ -10,17 +10,19 @@ import { useRouter } from 'next/navigation'
 
 export default function AdminUsers() {
   const router = useRouter()
-  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true' ? true : false
+   
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      router.push('/')
+    if ( typeof window !== 'undefined'){
+      const isAuthenticated = localStorage.getItem('isAuthenticated')
+      if (!isAuthenticated) {
+        router.push('/')
+      }
     }
-  }, [isAuthenticated, router])
 
-  if (!isAuthenticated) {
-    return null
-  }
+  }, [])
+
+
   return (
     <div className='min-h-screen bg-gray-50'>
       <Sidebar />

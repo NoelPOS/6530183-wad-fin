@@ -11,7 +11,10 @@ export function Sidebar() {
   const handleLogout = () => {
     window.confirm('Are you sure you want to logout?')
     logout()
-    localStorage.removeItem('isAuthenticated')
+    if (typeof window !== 'undefined'){
+      localStorage.removeItem('isAuthenticated')
+    }
+    
     router.push('/')
   }
 

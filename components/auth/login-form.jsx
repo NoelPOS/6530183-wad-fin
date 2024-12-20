@@ -27,7 +27,10 @@ export function LoginForm() {
       .then((data) => {
         if (data.success) {
           login(data.message.user)
-           localStorage.setItem('isAuthenticated', true)
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('isAuthenticated', true)
+          }
+          
           router.push('/admin/pendingusers')
         }
       })
