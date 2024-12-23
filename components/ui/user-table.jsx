@@ -159,7 +159,7 @@ export function UserTable() {
                             src={
                               user.verificationImageUrl
                                 ? user.verificationImageUrl
-                                : user.profileImageUrl
+                                : 'https://img.freepik.com/premium-vector/flat-icon-userprofile_941526-9280.jpg'
                             }
                             alt=''
                             className='w-40 h-40 rounded-lg'
